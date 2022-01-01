@@ -12,6 +12,9 @@ const (
 	// DriverCockroachDB is the cockroach driver name.
 	DriverCockroachDB = "cockroach"
 
+	// DriverMongoDB is the mongo driver name.
+	DriverMongoDB = "mongodb"
+
 	// UnknownDriver is the driver name if the driver is unknown.
 	UnknownDriver = "unknown"
 )
@@ -25,6 +28,8 @@ func Canonicalize(database string) string {
 		return DriverPostgreSQL
 	case "cockroach":
 		return DriverCockroachDB
+	case "mongodb":
+		return DriverMongoDB
 	default:
 		return UnknownDriver
 	}
